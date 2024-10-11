@@ -4,10 +4,15 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
     <mvc:annotation-driven></mvc:annotation-driven>
+<!--    webapp 안에 resources 만들어줘야함(원래 있던 resources 폴더 아님)-->
+<!--    mapping : 매핑할 때 위치-->
+<!--    location : 실제 위치-->
     <mvc:resources mapping="/resources/**" location="/resources/**"></mvc:resources>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<!--        논리 뷰의 앞부분-->
         <property name="prefix" value="/WEB-INF/views/"></property>
+<!--        뒷부분-->
         <property name="suffix" value=".jsp"></property>
     </bean>
     <context:component-scan base-package="com.pgm.springdemo.controller"/>
